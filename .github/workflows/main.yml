@@ -1,0 +1,17 @@
+name: RDP Access
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Set up RDP
+      run: |
+        echo "::group::Starting RDP Session"
+        # Download and run the RDP script
+        Invoke-WebRequest -Uri "https://raw.githubusercontent.com/rdp-community/rdp-on-github-actions/main/rdp.ps1" -OutFile "rdp.ps1"
+        .\rdp.ps1
+        echo "::endgroup::"
