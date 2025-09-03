@@ -1,0 +1,12 @@
+name: RDP Access
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Setup RDP on GitHub Actions
+        uses: anj-s/rdp-on-github-actions@main
